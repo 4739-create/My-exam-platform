@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telebirr Payment | Exit Exam Prep</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site">
+    <div class="container nav-wrap" id="nav"></div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <a class="small" href="index.html">&larr; Back to catalog</a>
+      <div class="grid grid-2 mt">
+        <div class="card">
+          <h1 id="examTitle">Telebirr payment</h1>
+          <p class="muted" id="examDept"></p>
+          <div id="examMeta" class="exam-meta"></div>
+
+          <div class="pay-box">
+            <p class="small muted">Transfer the exact amount to the following Telebirr account:</p>
+            <p class="pay-account" id="telebirrAccount">0929853878</p>
+            <p class="small">Account name: Exit Exam Prep Content Service</p>
+            <p class="exam-price" id="payAmount">0.00 ETB</p>
+          </div>
+
+          <ol class="steps">
+            <li>Open your Telebirr app or USSD menu.</li>
+            <li>Send the exact amount shown above to the account.</li>
+            <li>Copy the transaction reference (SMS code) from your confirmation message.</li>
+            <li>Enter the reference below and submit for verification.</li>
+          </ol>
+          <div class="notice">
+            Your payment stays <span class="status pending">Pending</span> until an administrator confirms the
+            transfer. You will be able to open the exam document after approval.
+          </div>
+        </div>
+
+        <div class="card">
+          <div id="onlinePayBox" class="hidden">
+            <h2>Pay now</h2>
+            <p class="muted small">
+              Pay securely with Telebirr, card or wallet. Your access unlocks automatically once the
+              payment is confirmed.
+            </p>
+            <p class="mt">
+              <button class="btn btn-block btn-lg" id="payNowBtn">Pay <span id="payNowAmount"></span> now</button>
+            </p>
+            <p class="form-note" id="payNowNote"></p>
+            <hr />
+            <p class="muted small">Prefer to transfer manually? Use the form below.</p>
+          </div>
+
+          <h2>Submit payment reference</h2>
+          <div id="alertBox"></div>
+          <form id="paymentForm" novalidate>
+            <label for="transactionRef">Telebirr transaction reference</label>
+            <input id="transactionRef" type="text" placeholder="e.g. 0FL7TQ3K9P" required />
+            <p class="form-note">This is the transaction number in your Telebirr confirmation SMS.</p>
+
+            <label for="senderPhone">Sender phone number (optional)</label>
+            <input id="senderPhone" type="tel" placeholder="0912345678" />
+            <p class="form-note">The phone number you used to send the payment.</p>
+
+            <p class="mt">
+              <button class="btn btn-block" type="submit" id="submitBtn">Submit for verification</button>
+            </p>
+          </form>
+          <div id="successBox"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/payment.js"></script>
+</body></html>

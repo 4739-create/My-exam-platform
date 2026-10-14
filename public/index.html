@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ethiopian Higher Education Exit Exam Preparation Platform</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site">
+    <div class="container nav-wrap" id="nav"></div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Prepare for your national exit exam with confidence</h1>
+      <p>
+        Department-specific exam documents, timed mock examinations, automatic scoring and detailed
+        answer explanations. Pay easily with Telebirr and get approved access to premium content.
+      </p>
+      <div class="badge-row">
+        <span class="pill">Telebirr payment</span>
+        <span class="pill">Admin-approved access</span>
+        <span class="pill">Timed mock exams</span>
+        <span class="pill">Instant scoring</span>
+        <span class="pill">Protected content</span>
+      </div>
+      <p class="mt">
+        <a class="btn btn-lg" href="register.html">Create your account</a>
+        <a class="btn btn-outline btn-lg" href="#catalog">Browse exam packages</a>
+      </p>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="section">
+      <h2>How it works</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>For students</h3>
+          <ol class="steps">
+            <li>Register with your full name, phone number and department.</li>
+            <li>Choose an exam package from the catalog.</li>
+            <li>Pay the exact amount to Telebirr account <strong id="telebirrInline">0929853878</strong>.</li>
+            <li>Submit your Telebirr transaction reference.</li>
+            <li>Wait for administrator approval, then open the document and take the mock exam.</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>Payment verification</h3>
+          <p class="muted">
+            Every payment is saved as <span class="status pending">Pending</span>. An administrator checks the
+            Telebirr account and confirms whether the transfer was received. Access is unlocked only after
+            the payment status becomes <span class="status approved">Approved</span>.
+          </p>
+          <div class="notice">
+            Telebirr receiving account: <strong id="telebirrInline2">0929853878</strong><br />
+            Always transfer the exact amount shown for the selected package.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="catalog">
+      <h2>Available exam packages</h2>
+      <p class="muted">Select a package to view details and start the payment process.</p>
+      <div id="alertBox"></div>
+      <div class="grid grid-3 mt" id="catalogGrid">
+        <p class="muted">Loading packages...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="container">
+      <p><strong>Ethiopian Higher Education Exit Exam Preparation Platform</strong></p>
+      <p class="small">
+        By using this platform you agree not to record, redistribute or share paid content.
+        Paid content is licensed for your personal study only.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

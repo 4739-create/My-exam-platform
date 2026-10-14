@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Dashboard | Exit Exam Prep</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site">
+    <div class="container nav-wrap" id="nav"></div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h1>My Dashboard</h1>
+      <p class="muted" id="welcome">Welcome.</p>
+    </section>
+
+    <section class="section">
+      <h2>My payments</h2>
+      <div id="alertBox"></div>
+      <div class="table-wrap mt">
+        <table>
+          <thead>
+            <tr>
+              <th>Exam package</th>
+              <th>Amount</th>
+              <th>Reference</th>
+              <th>Status</th>
+              <th>Submitted</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="paymentsBody">
+            <tr><td colspan="6" class="muted">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 id="catalogTitle">Your department package</h2>
+      <p class="muted" id="catalogSubtitle">This package matches the department you selected during registration.</p>
+      <div class="grid grid-3 mt" id="catalogGrid"></div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Portal | Exit Exam Prep</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site">
+    <div class="container nav-wrap" id="nav"></div>
+  </header>
+
+  <main class="container">
+    <section class="section" id="loginSection">
+      <div class="card form-narrow">
+        <h1>Administrator Portal</h1>
+        <p class="muted">Enter the administrator full name and password to review and approve payments.</p>
+        <div id="loginAlert"></div>
+        <form id="adminLoginForm" novalidate>
+          <label for="adminName">Administrator full name</label>
+          <input id="adminName" type="text" autocomplete="name" placeholder="e.g. Demeke Biyazen" required />
+
+          <label for="adminPassword">Administrator password</label>
+          <input id="adminPassword" type="password" autocomplete="current-password" required />
+          <p class="mt"><button class="btn btn-block" type="submit">Enter portal</button></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section hidden" id="dashboardSection">
+      <div class="grid" style="grid-template-columns: 1fr auto; align-items: center;">
+        <div>
+          <h1>Payment verification dashboard</h1>
+          <p class="muted">Check the Telebirr account, then approve or reject each pending payment.</p>
+        </div>
+        <div><button class="btn btn-ghost" id="adminLogout">Log out</button></div>
+      </div>
+
+      <div class="cards-row mt" id="statsRow"></div>
+
+      <div class="mt" style="display:flex; gap:.5rem; flex-wrap:wrap;">
+        <button class="btn btn-outline btn-sm filter-btn active" data-filter="pending">Pending</button>
+        <button class="btn btn-outline btn-sm filter-btn" data-filter="approved">Approved</button>
+        <button class="btn btn-outline btn-sm filter-btn" data-filter="rejected">Rejected</button>
+        <button class="btn btn-outline btn-sm filter-btn" data-filter="">All</button>
+        <button class="btn btn-ghost btn-sm" id="refreshBtn">Refresh</button>
+      </div>
+
+      <div id="adminAlert"></div>
+      <div class="table-wrap mt">
+        <table>
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Exam package</th>
+              <th>Amount</th>
+              <th>Transaction ref</th>
+              <th>Status</th>
+              <th>Dates</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="paymentsBody">
+            <tr><td colspan="7" class="muted">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="mt">Recent mock exam attempts</h2>
+      <div class="table-wrap mt">
+        <table>
+          <thead>
+            <tr><th>Student</th><th>Phone</th><th>Exam</th><th>Score</th><th>Submitted</th></tr>
+          </thead>
+          <tbody id="attemptsBody">
+            <tr><td colspan="5" class="muted">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
