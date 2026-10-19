@@ -151,11 +151,13 @@
             '<a href="' + l.href + '"' + (l.href === active ? ' class="active"' : '') + '>' + l.label + '</a>'
         )
         .join('') +
+      '<a class="btn btn-ghost btn-sm" href="login.html">Log in</a>' +
+      '<a class="btn btn-outline btn-sm" href="register.html">Register</a>' +
+      '<a class="btn btn-ghost btn-sm" href="admin.html">Admin Portal</a>' +
       (user
         ? '<span class="nav-user">' + escapeHtml(user.fullName) + '</span>' +
           '<button class="btn btn-ghost btn-sm" id="navLogout">Log out</button>'
-        : '<a class="btn btn-sm" href="login.html">Log in</a>' +
-          '<a class="btn btn-outline btn-sm" href="register.html">Register</a>') +
+        : '') +
       '</nav>';
 
     const toggle = document.getElementById('navToggle');
