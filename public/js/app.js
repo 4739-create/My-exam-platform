@@ -135,26 +135,33 @@
     }
 
     const user = Auth.user;
+    const isLoggedIn = !!user;
     const links = [
       { href: 'index.html', label: 'Home' },
-      { href: 'dashboard.html', label: 'My Dashboard' },
+      { href: 'dashboard.html', label: 'My Dashboard', auth: true },
+      { href: 'register.html', label: 'Register', guest: true },
+      { href: 'login.html', label: 'Login', guest: true },
+      { href: 'admin.html', label: 'Admin Portal' },
     ];
+
+    const filteredLinks = links.filter(l => {
+      if (l.auth && !isLoggedIn) return false;
+      if (l.guest && isLoggedIn) return false;
+      return true;
+    });
 
     host.innerHTML =
       '<a class="brand" href="index.html"><span class="brand-mark">EE</span>' +
       '<span class="brand-text">Exit Exam Prep<small>Ethiopian Higher Education</small></span></a>' +
       '<button class="nav-toggle" aria-label="Menu" id="navToggle">&#9776;</button>' +
       '<nav class="nav-links" id="navLinks">' +
-      links
+      filteredLinks
         .map(
           (l) =>
             '<a href="' + l.href + '"' + (l.href === active ? ' class="active"' : '') + '>' + l.label + '</a>'
         )
         .join('') +
-      '<a class="btn btn-ghost btn-sm" href="login.html">Log in</a>' +
-      '<a class="btn btn-outline btn-sm" href="register.html">Register</a>' +
-      '<a class="btn btn-ghost btn-sm" href="admin.html">Admin Portal</a>' +
-      (user
+      (isLoggedIn
         ? '<span class="nav-user">' + escapeHtml(user.fullName) + '</span>' +
           '<button class="btn btn-ghost btn-sm" id="navLogout">Log out</button>'
         : '') +
