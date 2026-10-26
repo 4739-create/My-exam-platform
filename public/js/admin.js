@@ -85,7 +85,8 @@
   async function loadPayments() {
     paymentsBody.innerHTML = '<tr><td colspan="7" class="muted">Loading...</td></tr>';
     try {
-      const { payments } = await api('/admin/payments' + (currentFilter ? '?status=' + currentFilter : ''), {
+      const { payments } = await api('/admin/payments' + (currentFilter 
+        ? '?status=' + currentFilter : ''), {
         admin: true,
       });
       if (!payments.length) {
@@ -93,7 +94,8 @@
         return;
       }
       paymentsBody.innerHTML = payments
-        .map((p) => {
+  
+      .map((p) => {
           const actions =
             p.status === 'pending'
               ? '<button class="btn btn-sm approve" data-id="' + p.id + '">Approve</button> ' +
